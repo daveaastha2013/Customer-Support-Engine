@@ -1,0 +1,192 @@
+{
+  "validation": {
+    "accuracy": 0.998,
+    "macro_f1": 0.9964,
+    "precision": 0.9993,
+    "recall": 0.9935,
+    "confusion_matrix": [
+      [
+        897,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        297,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2235,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        447,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        0,
+        147
+      ]
+    ],
+    "classes": [
+      "account",
+      "delivery",
+      "payment",
+      "refund",
+      "subscription"
+    ],
+    "report": {
+      "account": {
+        "precision": 1.0,
+        "recall": 0.9988864142538976,
+        "f1-score": 0.9994428969359331,
+        "support": 898.0
+      },
+      "delivery": {
+        "precision": 1.0,
+        "recall": 0.9933110367892977,
+        "f1-score": 0.9966442953020134,
+        "support": 299.0
+      },
+      "payment": {
+        "precision": 0.9964333481943826,
+        "recall": 1.0,
+        "f1-score": 0.9982134881643591,
+        "support": 2235.0
+      },
+      "refund": {
+        "precision": 1.0,
+        "recall": 0.9955456570155902,
+        "f1-score": 0.9977678571428571,
+        "support": 449.0
+      },
+      "subscription": {
+        "precision": 1.0,
+        "recall": 0.98,
+        "f1-score": 0.98989898989899,
+        "support": 150.0
+      },
+      "accuracy": 0.9980153807988092,
+      "macro avg": {
+        "precision": 0.9992866696388765,
+        "recall": 0.993548621611757,
+        "f1-score": 0.9963935054888304,
+        "support": 4031.0
+      },
+      "weighted avg": {
+        "precision": 0.9980224592444666,
+        "recall": 0.9980153807988092,
+        "f1-score": 0.9980119395021343,
+        "support": 4031.0
+      }
+    }
+  },
+  "test": {
+    "accuracy": 0.998,
+    "macro_f1": 0.996,
+    "precision": 0.9985,
+    "recall": 0.9936,
+    "confusion_matrix": [
+      [
+        898,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        299,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        2233,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        447,
+        0
+      ],
+      [
+        1,
+        0,
+        2,
+        1,
+        146
+      ]
+    ],
+    "classes": [
+      "account",
+      "delivery",
+      "payment",
+      "refund",
+      "subscription"
+    ],
+    "report": {
+      "account": {
+        "precision": 0.9966703662597114,
+        "recall": 1.0,
+        "f1-score": 0.9983324068927182,
+        "support": 898.0
+      },
+      "delivery": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 299.0
+      },
+      "payment": {
+        "precision": 0.9982118909253465,
+        "recall": 0.9991051454138703,
+        "f1-score": 0.9986583184257602,
+        "support": 2235.0
+      },
+      "refund": {
+        "precision": 0.9977678571428571,
+        "recall": 0.9955456570155902,
+        "f1-score": 0.9966555183946488,
+        "support": 449.0
+      },
+      "subscription": {
+        "precision": 1.0,
+        "recall": 0.9733333333333334,
+        "f1-score": 0.9864864864864865,
+        "support": 150.0
+      },
+      "accuracy": 0.9980153807988092,
+      "macro avg": {
+        "precision": 0.9985300228655831,
+        "recall": 0.9935968271525588,
+        "f1-score": 0.9960265460399228,
+        "support": 4031.0
+      },
+      "weighted avg": {
+        "precision": 0.9980181922541584,
+        "recall": 0.9980153807988092,
+        "f1-score": 0.9980092145381804,
+        "support": 4031.0
+      }
+    }
+  }
+}

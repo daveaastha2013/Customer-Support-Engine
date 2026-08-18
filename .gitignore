@@ -1,0 +1,29 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Environment Variables & Secrets
+.env
+.env.local
+
+# Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MLflow & Observability Artifacts
+mlruns/
+.langchain.db
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Docker build logs
+*.log

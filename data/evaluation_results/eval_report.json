@@ -1,0 +1,585 @@
+{
+  "summary": {
+    "total_test_queries": 30,
+    "high_evidence_queries": 22,
+    "low_evidence_queries": 8,
+    "category_classification_accuracy": 0.3667,
+    "retrieval_hit_rate_at_k": 0.4091,
+    "retrieval_mrr": 0.3864,
+    "low_evidence_detection_accuracy": 0.7333,
+    "avg_latency_ms": 228.01,
+    "p95_latency_ms": 278.97
+  },
+  "detailed_results": [
+    {
+      "test_id": 1,
+      "query": "My credit card was charged twice for order #9821.",
+      "expected_category": "payment",
+      "predicted_category": "payment",
+      "category_match": true,
+      "expected_doc": "payment_policy.md",
+      "retrieved_docs": [
+        "payment_policy.md",
+        "payment_policy.md",
+        "subscription_management.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 243.77
+    },
+    {
+      "test_id": 2,
+      "query": "What payment methods do you accept?",
+      "expected_category": "payment",
+      "predicted_category": "payment",
+      "category_match": true,
+      "expected_doc": "payment_policy.md",
+      "retrieved_docs": [
+        "payment_policy.md",
+        "refund_policy.md",
+        "payment_policy.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 262.91
+    },
+    {
+      "test_id": 3,
+      "query": "How do I request a refund for a failed transaction?",
+      "expected_category": "refund",
+      "predicted_category": "refund",
+      "category_match": true,
+      "expected_doc": "refund_policy.md",
+      "retrieved_docs": [
+        "payment_policy.md",
+        "refund_policy.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 0.5,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 210.09
+    },
+    {
+      "test_id": 4,
+      "query": "Why was my debit card payment declined?",
+      "expected_category": "payment",
+      "predicted_category": "payment",
+      "category_match": true,
+      "expected_doc": "payment_policy.md",
+      "retrieved_docs": [
+        "payment_policy.md",
+        "payment_policy.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 213.89
+    },
+    {
+      "test_id": 5,
+      "query": "Can I pay using PayPal or Apple Pay?",
+      "expected_category": "payment",
+      "predicted_category": "payment",
+      "category_match": true,
+      "expected_doc": "payment_policy.md",
+      "retrieved_docs": [
+        "payment_policy.md",
+        "account_security.md",
+        "subscription_management.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 232.97
+    },
+    {
+      "test_id": 6,
+      "query": "Where is my package? The tracking number is 88210.",
+      "expected_category": "delivery",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": "delivery_policy.md",
+      "retrieved_docs": [
+        "shipping_returns.md",
+        "shipping_returns.md",
+        "shipping_returns.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 209.85
+    },
+    {
+      "test_id": 7,
+      "query": "How long does standard shipping take?",
+      "expected_category": "delivery",
+      "predicted_category": "refund",
+      "category_match": false,
+      "expected_doc": "delivery_policy.md",
+      "retrieved_docs": [
+        "shipping_returns.md",
+        "shipping_returns.md",
+        "shipping_returns.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 221.13
+    },
+    {
+      "test_id": 8,
+      "query": "Do you offer international shipping?",
+      "expected_category": "delivery",
+      "predicted_category": "delivery",
+      "category_match": true,
+      "expected_doc": "delivery_policy.md",
+      "retrieved_docs": [
+        "shipping_returns.md",
+        "refund_policy.md",
+        "shipping_returns.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 211.97
+    },
+    {
+      "test_id": 9,
+      "query": "My order says delivered but I haven't received it.",
+      "expected_category": "delivery",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": "delivery_policy.md",
+      "retrieved_docs": [
+        "shipping_returns.md",
+        "payment_policy.md",
+        "shipping_returns.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 279.03
+    },
+    {
+      "test_id": 10,
+      "query": "Can I change my shipping address after placing an order?",
+      "expected_category": "delivery",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": "delivery_policy.md",
+      "retrieved_docs": [
+        "shipping_returns.md",
+        "shipping_returns.md",
+        "payment_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 209.97
+    },
+    {
+      "test_id": 11,
+      "query": "What is your return and refund window?",
+      "expected_category": "refund",
+      "predicted_category": "refund",
+      "category_match": true,
+      "expected_doc": "refund_policy.md",
+      "retrieved_docs": [
+        "refund_policy.md",
+        "refund_policy.md",
+        "payment_policy.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 214.98
+    },
+    {
+      "test_id": 12,
+      "query": "I received a damaged item and want my money back.",
+      "expected_category": "refund",
+      "predicted_category": "refund",
+      "category_match": true,
+      "expected_doc": "refund_policy.md",
+      "retrieved_docs": [
+        "refund_policy.md",
+        "shipping_returns.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 212.96
+    },
+    {
+      "test_id": 13,
+      "query": "How many days until the refund hits my bank account?",
+      "expected_category": "refund",
+      "predicted_category": "account",
+      "category_match": false,
+      "expected_doc": "refund_policy.md",
+      "retrieved_docs": [
+        "refund_policy.md",
+        "payment_policy.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 215.84
+    },
+    {
+      "test_id": 14,
+      "query": "Are return shipping fees refundable?",
+      "expected_category": "refund",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": "refund_policy.md",
+      "retrieved_docs": [
+        "refund_policy.md",
+        "refund_policy.md",
+        "shipping_returns.md"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 248.31
+    },
+    {
+      "test_id": 15,
+      "query": "How do I reset my account password?",
+      "expected_category": "account",
+      "predicted_category": "account",
+      "category_match": true,
+      "expected_doc": "account_management.md",
+      "retrieved_docs": [
+        "account_security.md",
+        "account_security.md",
+        "account_security.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 201.79
+    },
+    {
+      "test_id": 16,
+      "query": "I can't log in to my account.",
+      "expected_category": "account",
+      "predicted_category": "account",
+      "category_match": true,
+      "expected_doc": "account_management.md",
+      "retrieved_docs": [
+        "account_security.md",
+        "account_security.md",
+        "payment_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 210.03
+    },
+    {
+      "test_id": 17,
+      "query": "How do I enable two-factor authentication?",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": "account_management.md",
+      "retrieved_docs": [
+        "account_security.md",
+        "payment_policy.md",
+        "account_security.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 224.02
+    },
+    {
+      "test_id": 18,
+      "query": "How can I delete my personal account and data?",
+      "expected_category": "account",
+      "predicted_category": "account",
+      "category_match": true,
+      "expected_doc": "account_management.md",
+      "retrieved_docs": [
+        "account_security.md",
+        "account_security.md",
+        "payment_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 215.06
+    },
+    {
+      "test_id": 19,
+      "query": "How do I cancel my monthly subscription plan?",
+      "expected_category": "subscription",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": "subscription_policy.md",
+      "retrieved_docs": [
+        "subscription_management.md",
+        "account_security.md",
+        "subscription_management.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 278.9
+    },
+    {
+      "test_id": 20,
+      "query": "Can I upgrade from basic to premium subscription?",
+      "expected_category": "subscription",
+      "predicted_category": "account",
+      "category_match": false,
+      "expected_doc": "subscription_policy.md",
+      "retrieved_docs": [
+        "subscription_management.md",
+        "subscription_management.md",
+        "account_security.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 202.96
+    },
+    {
+      "test_id": 21,
+      "query": "Will I get a prorated refund if I cancel my subscription mid-month?",
+      "expected_category": "subscription",
+      "predicted_category": "refund",
+      "category_match": false,
+      "expected_doc": "subscription_policy.md",
+      "retrieved_docs": [
+        "subscription_management.md",
+        "account_security.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 226.06
+    },
+    {
+      "test_id": 22,
+      "query": "How do I pause my active subscription for a month?",
+      "expected_category": "subscription",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": "subscription_policy.md",
+      "retrieved_docs": [
+        "account_security.md",
+        "subscription_management.md",
+        "payment_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": false,
+      "actual_low_evidence": false,
+      "low_evidence_match": true,
+      "latency_ms": 210.9
+    },
+    {
+      "test_id": 23,
+      "query": "What is the capital of France?",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": null,
+      "retrieved_docs": [
+        "shipping_returns.md",
+        "account_security.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": true,
+      "actual_low_evidence": false,
+      "low_evidence_match": false,
+      "latency_ms": 204.99
+    },
+    {
+      "test_id": 24,
+      "query": "How do I bake a chocolate cake?",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": null,
+      "retrieved_docs": [
+        "account_security.md",
+        "shipping_returns.md",
+        "technical_troubleshooting.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": true,
+      "actual_low_evidence": false,
+      "low_evidence_match": false,
+      "latency_ms": 272.43
+    },
+    {
+      "test_id": 25,
+      "query": "What is quantum computing?",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": null,
+      "retrieved_docs": [
+        "refund_policy.md",
+        "shipping_returns.md",
+        "account_security.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": true,
+      "actual_low_evidence": false,
+      "low_evidence_match": false,
+      "latency_ms": 217.56
+    },
+    {
+      "test_id": 26,
+      "query": "Can you solve this math equation 2 + 2 * 10?",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": null,
+      "retrieved_docs": [
+        "account_security.md",
+        "shipping_returns.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": true,
+      "actual_low_evidence": false,
+      "low_evidence_match": false,
+      "latency_ms": 212.01
+    },
+    {
+      "test_id": 27,
+      "query": "Who won the FIFA world cup in 2022?",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": null,
+      "retrieved_docs": [
+        "account_security.md",
+        "subscription_management.md",
+        "account_security.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": true,
+      "actual_low_evidence": false,
+      "low_evidence_match": false,
+      "latency_ms": 224.01
+    },
+    {
+      "test_id": 28,
+      "query": "What are the rules for playing chess?",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": null,
+      "retrieved_docs": [
+        "account_security.md",
+        "shipping_returns.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": true,
+      "actual_low_evidence": false,
+      "low_evidence_match": false,
+      "latency_ms": 240.41
+    },
+    {
+      "test_id": 29,
+      "query": "What is the weather forecast in Tokyo today?",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": null,
+      "retrieved_docs": [
+        "shipping_returns.md",
+        "account_security.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": true,
+      "actual_low_evidence": false,
+      "low_evidence_match": false,
+      "latency_ms": 291.62
+    },
+    {
+      "test_id": 30,
+      "query": "Tell me a joke about software engineers.",
+      "expected_category": "account",
+      "predicted_category": "payment",
+      "category_match": false,
+      "expected_doc": null,
+      "retrieved_docs": [
+        "shipping_returns.md",
+        "account_security.md",
+        "refund_policy.md"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "expected_low_evidence": true,
+      "actual_low_evidence": false,
+      "low_evidence_match": false,
+      "latency_ms": 219.89
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: support_intelligence_api
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_ENABLED=true
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    depends_on:
+      - redis
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    command: uvicorn app.api.main:app --host 0.0.0.0 --port 8000
+
+  ui:
+    build: .
+    container_name: support_intelligence_ui
+    ports:
+      - "8502:8502"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    depends_on:
+      - api
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    command: streamlit run app/ui/streamlit_app.py --server.port=8502 --server.address=0.0.0.0
+
+  redis:
+    image: redis:7-alpine
+    container_name: support_intelligence_redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5

@@ -1,0 +1,36 @@
+{
+  "validation": {
+    "roc_auc": 1.0,
+    "f1_score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "confusion_matrix": [
+      [
+        4030,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "disclaimer": "EXPERIMENTAL PROXY MODEL DISCLAIMER: This model uses heuristic proxy labels derived from sentiment, message length, and contact frequency. It is an experimental modeling component and DOES NOT represent real-world customer escalation outcomes."
+  },
+  "test": {
+    "roc_auc": 1.0,
+    "f1_score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "confusion_matrix": [
+      [
+        4028,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "disclaimer": "EXPERIMENTAL PROXY MODEL DISCLAIMER: This model uses heuristic proxy labels derived from sentiment, message length, and contact frequency. It is an experimental modeling component and DOES NOT represent real-world customer escalation outcomes."
+  }
+}
