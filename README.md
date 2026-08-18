@@ -1,10 +1,10 @@
-# 🤖 Customer Support Intelligence Engine
+# Customer Support Intelligence Engine
 
 A production-grade **Customer Support Intelligence Engine** designed for customer support teams. Instead of serving as a generic chatbot, this system automates end-to-end support triage: it **classifies incoming support tickets**, **retrieves relevant knowledge base policies and historical resolution pairs**, **predicts experimental escalation risk**, and **generates grounded LLM responses** with low-evidence fallback detection and full observability.
 
 ---
 
-## 📐 System Architecture
+## System Architecture
 
 ```mermaid
 flowchart TD
@@ -31,7 +31,7 @@ flowchart TD
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 1. **Multi-Class Ticket Classification**: TF-IDF + Logistic Regression model categorizing tickets into `payment`, `delivery`, `refund`, `account`, and `subscription` with **99.8% accuracy**.
 2. **Hybrid RAG Retrieval**: Combines dense vector search (`FAISS` + `all-MiniLM-L6-v2`) and sparse keyword search (`BM25`) fused via **Reciprocal Rank Fusion (RRF)**.
@@ -45,7 +45,7 @@ flowchart TD
 
 ---
 
-## ⚠️ Experimental Proxy Escalation Disclaimer
+## Experimental Proxy Escalation Disclaimer
 
 > **IMPORTANT**: The escalation prediction model is an **experimental component** trained on heuristic proxy labels (derived from negative sentiment, message length, and prior contact count). These proxy labels **do not represent real-world customer escalation outcomes**. The resulting risk scores and metrics are strictly experimental and intended for system validation.
 
@@ -63,7 +63,7 @@ flowchart TD
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ├── app/
@@ -113,7 +113,7 @@ flowchart TD
 
 ---
 
-## 🚀 Quickstart Guide
+## Quickstart Guide
 
 ### 1. Local Environment Setup
 
@@ -192,7 +192,7 @@ docker-compose up --build
 
 ---
 
-## 🧪 Testing
+## Testing
 
 To run automated unit and integration tests:
 
@@ -202,6 +202,6 @@ PYTHONPATH=. venv/bin/python -m pytest -p no:launch_pytest tests/test_components
 
 ---
 
-## 📜 License & Acknowledgments
+## License & Acknowledgments
 - Bitext Customer Support Dataset
 - Built with FastAPI, Streamlit, FAISS, Sentence Transformers, XGBoost, MLflow, and LangChain.
