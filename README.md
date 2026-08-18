@@ -4,33 +4,6 @@ A production-grade **Customer Support Intelligence Engine** designed for custome
 
 ---
 
-## System Architecture
-
-```mermaid
-flowchart TD
-    A[Customer Support Ticket] --> B[Redis Cache Lookup]
-    B -- Cache Hit --> Z[Cached Output Payload]
-    B -- Cache Miss --> C[Issue Classifier\nTF-IDF + LogReg]
-    
-    C --> D[Historical Case Retriever\nFAISS Bitext Interactions]
-    C --> E[Hybrid KB Retriever\nFAISS Vector + BM25 Keyword]
-    
-    E --> F[Reciprocal Rank Fusion RRF]
-    F --> G[Cross-Encoder Reranker\nms-marco-MiniLM-L-6-v2]
-    
-    D --> H[Experimental Escalation Model\nXGBoost Proxy Classifier]
-    G --> H
-    
-    G --> I[Grounded LLM Generator\nGroq Llama-3.1 / Fallback Engine]
-    H --> I
-    
-    I --> J[Low-Evidence Guardrail Check]
-    J --> K[Final Output Payload + Observability Trace\nMLflow / LangSmith]
-    K --> L[Redis Cache Storage]
-```
-
----
-
 ## Key Features
 
 1. **Multi-Class Ticket Classification**: TF-IDF + Logistic Regression model categorizing tickets into `payment`, `delivery`, `refund`, `account`, and `subscription` with **99.8% accuracy**.
